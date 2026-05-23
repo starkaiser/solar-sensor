@@ -4,18 +4,18 @@ Monthly average solar intensity charts for Craiova, Romania, 2017-2018.
 My father wanted to install solar panels on his house, but he wanted first to get an idea of how the energy production would look like and how it will change depending on month and hour of the day. 
 To get an idea, I used an Arduino board and a sensor that measures the solar power in W/m^2 to log the data in a CSV format.
 The Fortran programs are used to filter the raw data, extracting only the power and time values. To experiment with parallel programming in Fortran, I used coarrays to run 4 images in parallel and got a 3x increase in speed.
-R is used to average the filtered values for each month, make a plot of the average values for each month and also for the whole year.
+R is used to average the filtered values for each month, make a plot of the average values for each month and one for the whole year.
 
 ## Results
 The plots are located in the /results folder.
 
-Comparison of the average solar power for each month:
+### Comparison for each month and also the whole year
 ![](/results/all_months_comparison.png)
 
-Average day for a whole year:
+### Average daily power for the whole year
 ![](/results/year_average.png)
 
-Average day for each month:
+### Average daily power for each month
 ![](/results/jan_average.png)
 ![](/results/feb_average.png)
 ![](/results/mar_average.png)
