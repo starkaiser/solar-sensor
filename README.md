@@ -1,5 +1,5 @@
 # solar-sensor
-Monthly average solar power intensity plots for Craiova, Romania, for the time period 2017-2018 
+Monthly average solar power intensity plots for Craiova, Romania, for the time period 2017-2018.
 
 My father wanted to install solar panels on his house, but he wanted first to get an idea of how the energy production would look like and how it will change depending on month and hour of the day. He asked me to make some plots of average solar power intensity, so I used an Arduino board and a sensor that measures the solar power in W/m^2 to log the data in a CSV format.
 
