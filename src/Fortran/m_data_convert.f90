@@ -61,28 +61,23 @@ contains
 
         tstr = adjustl(line(c3+1:c4-1))
     end function extract_time
-    
-    pure logical function time_check(time, start_time, end_time) result(ok)
 
+    pure logical function time_check(time) result(ok)
         character(len=*), intent(in) :: time
-        integer, intent(in) :: start_time, end_time
-
         integer :: h, m, s
-        integer :: p1, p2
+        integer :: ios
         integer :: total_seconds
 
-        p1 = index(time, ':')
-        p2 = p1 + index(time(p1+1:), ':')
+        ! Parse HH:MM:SS safely
+        read(time, '(I2,1X,I2,1X,I2)', iostat=ios) h, m, s
 
-        read(time(:p1-1), *) h
-        read(time(p1+1:p2-1), *) m
-        read(time(p2+1:), *) s
+        if (ios /= 0) then
+            ok = .false.
+            return
+        end if
 
         total_seconds = h*3600 + m*60 + s
-
-        ok = ( total_seconds >= start_time*3600 .and. &
-               total_seconds <= end_time*3600 )
-
+        ok = (total_seconds >= 10*3600 .and. total_seconds <= 21*3600)
     end function time_check
 
 end module m_data_convert

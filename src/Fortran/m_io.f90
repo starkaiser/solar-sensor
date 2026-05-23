@@ -84,7 +84,7 @@ contains
             tstr = extract_time(line)
 
             ! keep only daytime values
-            if (time_check(tstr, 6, 21)) then
+            if (time_check(tstr)) then
                 n = n + 1
                 temp_power(n) = pwr
                 temp_time(n)  = tstr

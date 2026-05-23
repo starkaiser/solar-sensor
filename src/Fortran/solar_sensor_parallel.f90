@@ -41,12 +41,7 @@ program solar_sensor_parallel
     integer :: is, ie, indices(2)
 
     call start_timer(t)
-    
-    if (this_image() == 1) then
-        call clear_folder(data_processed_path)
-    end if
-    
-    sync all
+    call clear_folder(data_processed_path)
     
     if (num_images() > size(months)) error stop 'Error: Too many images'
     indices = tile_indices(size(months))
@@ -59,10 +54,9 @@ program solar_sensor_parallel
     
     sync all
     
-    if (this_image() == 1) then
-        print *, "Program finished"
-        call stop_timer(t)
-        call write_log(t, output_folder_path // "/logfile_parallel.txt", "Solar Sensor Parallel")
-    end if
+    print *, "Program finished"
+
+    call stop_timer(t)
+    call write_log(t, output_folder_path // "/logfile_parallel.txt", "Solar Sensor Parallel")
 
 end program solar_sensor_parallel

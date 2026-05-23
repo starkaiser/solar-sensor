@@ -34,9 +34,9 @@ module m_parameters
     private
     public :: data_raw_path, data_processed_path, output_folder_path, folders, months
     
-    character(len=*), parameter :: data_raw_path = "./data/raw"
-    character(len=*), parameter :: data_processed_path = "./data/processed"
-    character(len=*), parameter :: output_folder_path = "./output"
+    character(len=*), parameter :: data_raw_path = "../data/raw"
+    character(len=*), parameter :: data_processed_path = "../data/processed"
+    character(len=*), parameter :: output_folder_path = "../output"
     character(len=*), parameter :: folders(12) = ['01_jan_2018', '02_feb_2018', '03_mar_2018', &
                                                   '04_apr_2017', '05_may_2017', '06_jun_2017', &
                                                   '07_jul_2017', '08_aug_2017', '09_sep_2017', &
