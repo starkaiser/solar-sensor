@@ -1,9 +1,9 @@
 # solar-sensor
-Monthly average solar intensity charts for Craiova, Romania, 2017-2018.
+Monthly average solar power intensity plots for Craiova, Romania, 2017-2018.
 
-My father wanted to install solar panels on his house, but he wanted first to get an idea of how the energy production would look like and how it will change depending on month and hour of the day. 
-To get an idea, I used an Arduino board and a sensor that measures the solar power in W/m^2 to log the data in a CSV format.
-The Fortran programs are used to filter the raw data, extracting only the power and time values. To experiment with parallel programming in Fortran, I used coarrays to run 4 images in parallel and got a 3x increase in speed.
+My father wanted to install solar panels on his house, but he wanted first to get an idea of how the energy production would look like and how it will change depending on month and hour of the day. He asked me to make some plots of average solar power intensity, so I used an Arduino board and a sensor that measures the solar power in W/m^2 to log the data in a CSV format.
+
+To experiment with parallel programming, I used Fortran to filter the raw data and extract only the values for power and time. I used coarrays to run 4 images in parallel and got a 3x increase in speed, comapred to the serial implementation of the program.
 R is used to average the filtered values for each month, make a plot of the average values for each month and one for the whole year.
 
 ## Results
@@ -48,7 +48,7 @@ $ make run_parallel
 
 ### R
 
-To make the plots, simply run the scripts in the /src/R folder.
+To make the plots, simply run the scripts in the /src/R folder. This is easy to do in RStudio.
 
 ## License
 
